@@ -9,16 +9,12 @@
 fname = input("Enter file name: ") # get the input
 fh = open(fname) #open a file
 readfh = fh.read()#read a file
-
-
-
 fline = readfh.rstrip().split() #remove blank space to the right and split the paragraph into words
-
 lst = list() #call a list
 for item in fline: #here if the word is not on the list we add it to the list
     if item in lst:
         continue
     else:
         lst.append(item)
-lst.sort()                #sort in alphabetical oder
+lst.sort() #sort in alphabetical oder
 print(lst)

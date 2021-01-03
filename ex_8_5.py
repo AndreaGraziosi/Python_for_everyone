@@ -12,7 +12,7 @@
 
 
 fname = input("Enter file name: ")
-if len(fname) < 1 : fname = "mbox-short.txt"
+
 
 fhand = open(fname)
 count = 0
@@ -20,6 +20,7 @@ for line in fhand:
     line = line.rstrip()
     if not line.startswith("From "): continue
     words = line.split() #looks like a list with each word in the line as a string in the list ["From", "email", "day" ...]
+    if len(fname) < 1 : fname = "mbox-short.txt" # gardian statement
     print(words[1])
-    count = count +1 
+    count = count +1
 print("There were", count, "lines in the file with From as the first word")
